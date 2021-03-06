@@ -20,19 +20,20 @@ from keras.layers import Input, Dense, BatchNormalization, MaxPooling2D, Dropout
 # Model loading function
 
 class ImagePrediction():
+    
+    IMG_WIDTH = 224
+    IMG_HEIGHT = 224
+    COLORS = 3
+    POOLING_DROPOUT_RATE = 0.2
+    FC_DROPOUT_RATE = 0.3
+    NUMBER_OF_CLASSES = 102
+    FC1_NEURONS = 4096 
+    FC2_NEURONS = 1024
+    FC3_NEURONS = 512
+    WEIGHTS_PATH = 'weights.hdf5'
 
     def __init__(self):
-        
-        self.IMG_WIDTH = 224
-        self.IMG_HEIGHT = 224
-        self.COLORS = 3
-        self.POOLING_DROPOUT_RATE = 0.2
-        self.FC_DROPOUT_RATE = 0.3
-        self.NUMBER_OF_CLASSES = 102
-        self.FC1_NEURONS = 4096 
-        self.FC2_NEURONS = 1024
-        self.FC3_NEURONS = 512
-        self.WEIGHTS_PATH = 'weights.hdf5'
+        pass
 
     # Function to load the model
 
@@ -92,7 +93,7 @@ class ImagePrediction():
         np_image = np.expand_dims(np_image, axis = 0)
         
         pred = model.predict(np_image)
-	indices = arr.argsort()[-3:][::-1]
+        indices = arr.argsort()[-3:][::-1]
     
         return indices
 

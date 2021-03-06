@@ -21,36 +21,37 @@ from keras.preprocessing.image import ImageDataGenerator
 
 class ImageModel():
     
+    # Preprocessing constants
+        
+    IMG_WIDTH = 224
+    IMG_HEIGHT = 224
+    COLORS = 3
+    ROTATION_RANGE = 40
+    SHIFT_RANGE = 0.2
+    SHEAR_RANGE = 0.2
+    ZOOM_RANGE = 0.2
+    LABELS_PATH = 'data/train.csv'
+    BATCH_SIZE = 32
+    SEED = 42
+    
+    # Neural network layer parameters
+        
+    POOLING_DROPOUT_RATE = 0.2
+    FC_DROPOUT_RATE = 0.3
+    NUMBER_OF_CLASSES = 102
+    FC1_NEURONS = 4096 
+    FC2_NEURONS = 1024
+    FC3_NEURONS = 512
+    
+    # Hyperparameters and others
+        
+    LEARNING_RATE = 0.1
+    DECAY = 0.95
+    EPSILON = 1e-08
+    NUMBER_OF_EPOCHS = 12
+    
     def __init__(self):
-        
-        # Preprocessing constants
-        
-        self.IMG_WIDTH = 224
-        self.IMG_HEIGHT = 224
-        self.COLORS = 3
-        self.ROTATION_RANGE = 40
-        self.SHIFT_RANGE = 0.2
-        self.SHEAR_RANGE = 0.2
-        self.ZOOM_RANGE = 0.2
-        self.LABELS_PATH = 'data/train.csv'
-        self.BATCH_SIZE = 32
-        self.SEED = 42
-        
-        # Neural network constants
-        
-        self.POOLING_DROPOUT_RATE = 0.2
-        self.FC_DROPOUT_RATE = 0.3
-        self.NUMBER_OF_CLASSES = 102
-        self.FC1_NEURONS = 4096 
-        self.FC2_NEURONS = 1024
-        self.FC3_NEURONS = 512
-        
-        # Hyperparameters and others
-        
-        self.LEARNING_RATE = 0.1
-        self.DECAY = 0.95
-        self.EPSILON = 1e-08
-        self.NUMBER_OF_EPOCHS = 12
+        pass
     
     def load_data(self):
     
